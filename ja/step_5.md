@@ -1,6 +1,6 @@
 ## Pythonプログラミングインタフェースを使用する
 
-With Minecraftを走らせて世界を創り上げたら、 `Tab`キー アプリケーションメニューからPython 3を開き、ウィンドウを左右に移動させます。
+Minecraftを起動し世界を創り上げたら、 `Tab`キー アプリケーションメニューからPython 3を開き、ウィンドウを左右に移動させます。
 コマンドを直接Pythonウィンドウに入力するか、ファイルを作成してコードを保存してもう一度実行することができます。
 ファイルを作成する場合は、`File > New window` 、`File > Save`. の順に選択します。ホームフォルダまたは新しいプロジェクトフォルダに保存することをお勧めします。
 
@@ -32,11 +32,11 @@ pos = mc.player.getPos()
 x, y, z = mc.player.getPos()
 ```
 
- `x`, `y`, `z` には、それぞれの位置座標が含まれています。 `x`  `z`は歩行方向（前後左右）、 (forward/back and left/right) and `y` is up/down.
+ `x`, `y`, `z` には、それぞれの位置座標が含まれています。 `x`  `z`は歩行方向（前後左右）、`y`は上下方向です。
 
-Note that `getPos()` returns the location of the player at the time, and if you move position you have to call the function again or use the stored location.
+ `getPos()` はその時点のプレーヤーの位置を返します。位置を移動する場合は、関数を再度呼び出すか、格納された位置を使用する必要があります。
 
-### Teleport
+### テレポート
 
 As well as finding out your current location you can specify a particular location to teleport to.
 
