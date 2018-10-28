@@ -1,13 +1,10 @@
-## Use the Python programming interface
+## Pythonプログラミングインタフェースを使用する
 
-With Minecraft running, and the world created, bring your focus away from the game by pressing the `Tab` key, which will free your mouse. Open Python 3 from the application menu and move the windows so they're side-by-side.
+With Minecraftを走らせて世界を創り上げたら、 `Tab`キー アプリケーションメニューからPython 3を開き、ウィンドウを左右に移動させます。
+コマンドを直接Pythonウィンドウに入力するか、ファイルを作成してコードを保存してもう一度実行することができます。
+ファイルを作成する場合は、`File > New window` 、`File > Save`. の順に選択します。ホームフォルダまたは新しいプロジェクトフォルダに保存することをお勧めします。
 
-You can either type commands directly into the Python window or create a file so you can save your code and run it again another time.
-
-If you want create a file, go to `File > New window` and `File > Save`. You'll probably want to save this in your home folder or a new project folder.
-
-Start by importing the Minecraft library, creating a connection to the game and testing it by posting the message "Hello world" to the screen:
-
+まず、Minecraftライブラリをインポートし、ゲームへの接続を作成し、"Hello world" というメッセージをポストしてテストします。
 ```python
 from mcpi.minecraft import Minecraft
 
@@ -16,27 +13,26 @@ mc = Minecraft.create()
 mc.postToChat("Hello world")
 ```
 
-If you're entering commands directly into the Python window, just hit `Enter` after each line. If it's a file, save with `Ctrl + S` and run with `F5`. When your code runs, you should see your message on screen in the game.
 
-![](images/helloworld.gif)
+コマンドを直接Pythonウィンドウに入力する場合は、各行の後に `Enter` を押してください。ファイルの場合は`Ctrl + S`で保存し、 `F5`. で実行します。コードが実行されると、ゲームの画面にメッセージが表示されます。
 
-### Find your location
+### あなたの場所を見つける
 
-To find your location, type:
+現在地を見つけるには、次のように入力します
 
 ```python
 pos = mc.player.getPos()
 ```
 
-`pos` now contains your location; access each part of the set of coordinates with `pos.x`, `pos.y` and `pos.z`.
+`pos` にはあなたの場所が含まれています。 `pos.x`, `pos.y` and `pos.z`で座標セットの各部分にアクセスします。
 
-Alternatively, a nice way to get the coordinates into separate variables is to use Python's unpacking technique:
+別の方法として、座標を別々の変数にするには、Pythonのアンパック手法を使用するのが良い方法です。
 
 ```python
 x, y, z = mc.player.getPos()
 ```
 
-Now `x`, `y`, and `z` contain each part of your position coordinates. `x` and `z` are the walking directions (forward/back and left/right) and `y` is up/down.
+ `x`, `y`, `z` には、それぞれの位置座標が含まれています。 `x`  `z`は歩行方向（前後左右）、 (forward/back and left/right) and `y` is up/down.
 
 Note that `getPos()` returns the location of the player at the time, and if you move position you have to call the function again or use the stored location.
 
